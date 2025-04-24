@@ -1,0 +1,21 @@
+import urllib.parse
+
+# 사용자 입력
+answer = input("오빠 데이트 할래요? (예/아니): ")
+
+if answer.strip().lower() == "예":
+    date = input("좋아! 언제 만날까요? (예: 2025-05-01): ")
+    place = input("가고 싶은 곳이 있어요?: ")
+    work = input("여기에서 뭐 하고 싶어요?: ")
+
+    encoded_place = urllib.parse.quote(place)
+    naver_link = f"https://map.naver.com/p/search/{encoded_place}"
+
+    print("\n✅ 데이트가 확정되었어요!")
+    print(f"📅 날짜: {date}")
+    print(f"📍 장소: {place}")
+    print(f"🔍 장소 검색 링크: {naver_link} 내가 추천하는 곳이에요 ^^")
+else:
+    print("😢 아쉽네요. 다음에 또 기회가 있겠죠!")
+
+print("*참고사항: 귀하의 결과 사진을 보내주시기 바랍니다.~~ ^^*")
